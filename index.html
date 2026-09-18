@@ -284,15 +284,17 @@
   .timeline-group{margin-top:40px;}
   .timeline-group:first-of-type{margin-top:28px;}
   .timeline-group-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-secondary);max-width:760px;margin:0 auto 4px;}
-  .timeline{position:relative;max-width:760px;margin:20px auto 0;padding-left:28px;border-left:2px solid var(--border);}
-  .timeline-item{position:relative;padding-bottom:32px;}
-  .timeline-item:last-child{padding-bottom:0;}
-  .timeline-dot{position:absolute;left:-35px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--text-muted);box-shadow:0 0 0 4px var(--bg-base);}
+  .timeline{position:relative;display:flex;gap:8px;overflow-x:auto;overflow-y:visible;padding:44px 4px 20px;margin:20px 0 0;}
+  .timeline::before{content:'';position:absolute;left:4px;right:4px;top:44px;height:2px;background:var(--border);}
+  .timeline-item{position:relative;flex:0 0 220px;padding:0 20px 0 0;}
+  .timeline-item:last-child{padding-right:4px;}
+  .timeline-dot{position:absolute;left:0;top:-4px;width:10px;height:10px;border-radius:50%;background:var(--text-muted);box-shadow:0 0 0 4px var(--bg-base);}
   .timeline-item.is-tenure .timeline-dot{background:var(--accent-2);}
   .timeline-date{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-2);margin-bottom:6px;}
   .timeline-role{font-size:16px;font-weight:700;color:var(--text-primary);margin-bottom:2px;}
   .timeline-org{font-size:13px;color:var(--text-muted);display:block;margin-bottom:8px;}
   .timeline-desc{font-size:14px;line-height:1.6;color:var(--text-secondary);margin:0;}
+  @media (max-width:767px){ .timeline-item{flex:0 0 200px;} }
   .timeline-tag{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:2px 8px;border-radius:999px;margin-left:8px;vertical-align:middle;}
   .timeline-tag.edu{background:rgba(147,51,234,.15);color:var(--accent-3);}
   .timeline-tag.work{background:rgba(255,45,166,.15);color:var(--accent-2);}
